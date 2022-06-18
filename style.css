@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+form {
+    margin: auto;
+    margin-bottom: 40vh;
+    background-color: lightgray;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.input {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border-style: none;
+    outline: none;
+    background-color: aliceblue;
+    text-indent: 7px;
+    height: 25px;
+    padding: 5px;
+}
+
+.output:disabled {
+    color: black;
+}
+
+.output {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border-style: none;
+    outline: none;
+    background-color: aliceblue;
+    text-indent: 7px;
+    height: 25px;
+    padding: 5px;
+}
+
+.inputs {
+    margin: auto;
+}
+
+#outputdiv {
+    margin-top: 20px;
+}
+
+.calc {
+    margin-left: auto;
+}
