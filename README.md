@@ -7,8 +7,9 @@
 <ul>
     <li>Projeto feito a partir de HTML, CSS e JavaScript</li>
     <li>Não é necessária uma conexão à internet para a realização dos cálculos</li>
+    <li>Até o momento, não temos um layout para celular. Recomendado utilizar em um computador</li>
 </ul>
 
 <hr>
 
-<h3>Esse projeto é desenvolvido por várias pessoas e será evoluido ao longo do tempo. Toda a parte de cálculo é feita com JavaScript e não é necessária uma conexão à internet para a realização dos cálculos.</h3>
+<h3>Esse projeto é desenvolvido por várias pessoas e será evoluido ao longo do tempo. Sou um programador iniciante e esse é um projeto que estou desenvolvendo para treinar. Qualquer dica que tiver ou problema que encontrar, me contate. Todo o source-code está disponível.</h3>
