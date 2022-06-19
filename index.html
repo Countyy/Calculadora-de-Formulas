@@ -9,9 +9,21 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <section class="lista">
+        <div class="lista-mat">
+            <h3 class="titulomatematica">Matemática</h3>
+            <ul>
+                <li><a href="#pitagoras">Descobrir Hipotenusa</a></li>
+            </ul>
+        </div>
+    </section>
     <div class="container">
-        <form>
-            <div class="inputs">
+        <form class="pitagoras" id="pitagoras">
+            <div class="titulodiv">
+                <h2 class="titulo">Teorema de Pitágoras</h2>
+                <p class="subtitulo">Essa calculadora utiliza o Teorema de Pitágoras para realizar o cálculo para descobrir a hipotenusa. Basta adicionar nos campos abaixo o primeiro e o segundo cateto (a e b) e o programa utilizará essas informações para descobrir o valor da Hipotenusa (c) utilizando a fórmula do Teorema (a² + b² = c²)</p>
+            </div><br>
+            <div class="pitagorasdiv">
                 <div>
                     <label for="number1">Cateto 1</label><br>
                     <input class="input" type="number" id="number1">
