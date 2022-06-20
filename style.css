@@ -1,8 +1,12 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
     scroll-behavior: smooth;
+}
+
+a:active, a:visited, a:enabled {
+    color: black;
 }
 
 .container {
@@ -13,9 +17,9 @@
 .input {
     margin-bottom: 20px;
     border-radius: 4px;
-    border-style: none;
+    border: solid 1px black;
     outline: none;
-    background-color: aliceblue;
+    background-color: lightgray;
     text-indent: 7px;
     height: 25px;
     padding: 5px;
@@ -30,7 +34,7 @@
     border-radius: 4px;
     border-style: none;
     outline: none;
-    background-color: aliceblue;
+    background-color: lightgray;
     text-indent: 7px;
     height: 25px;
     padding: 5px;
@@ -48,9 +52,16 @@
 }
 
 .pitagorasdiv {
-    position: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
     width: 179px;
+    background-color: white;
+    padding: 20px;
+    border: black solid 2px;
+    color: black;
+    border-radius: 10px;
 }
 
 #outputdiv {
@@ -103,24 +114,33 @@
     display: flex;
     margin: auto;
     width: 80vw;
-    margin-bottom: 8vh;
-    margin-top: 10px;
+    margin-bottom: 30vh;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 100px;
 }
 
 .lista-mat {
-    height: 400px;
+    height: 80vh;
     border-radius: 10px;
-    width: 200px;
+    width: 400px;
     background-color: aquamarine;
-    margin: auto;
     padding: 30px;
-    display:flex;
-    flex-direction: column;
+    overflow: scroll;
 }
 
 .titulomatematica {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
     margin-bottom: 30px;
+}
+
+.lista-fis {
+    height: 80vh;
+    border-radius: 10px;
+    width: 400px;
+    background-color: aqua;
+    padding: 30px;
+}
+
+.link-list {
+    margin-left: 1vw;
 }
