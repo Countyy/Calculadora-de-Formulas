@@ -64,59 +64,64 @@
                     <div>
                         <label for="km/h-m/s">km/h -> m/s</label><br>
                         <input id="km/h-m/s" type="number" class="input" autocomplete="none">
-                        <button type="button" class="convert" onclick="kmhToMs()">Converter</button><br>
+                        <button type="button" class="convert" onclick="kmhToMs(0)">Converter</button><br>
                         <input id="km/h-m/s-result" type="text" disabled class="output">
+                        <hr class="hr">
+                        <label for="km/h-m/s1">m/s -> km/h</label><br>
+                        <input id="km/h-m/s1" type="number" class="input" autocomplete="none">
+                        <button type="button" class="convert" onclick="kmhToMs(1)">Converter</button><br>
+                        <input id="m/s-km/h-result" type="text" disabled class="output">
                     </div>
                 </div>
                 <div class="fisicadiv">
                     <div>
-                        <label for="distâcia">Distância (ΔS)</label><br>
-                        <input class="input" type="number" id="distancia">
+                        <label for="distancia1">Distância (ΔS)</label><br>
+                        <input class="input" type="number" id="distancia1">
                     </div>
                     <div>
-                        <label for="tempo">Velocidade Média (Vm)</label><br>
-                        <input class="input" type="number" id="tempo">
+                        <label for="Vm1">Velocidade Média (Vm)</label><br>
+                        <input class="input" type="number" id="Vm1">
                     </div>
                     <div id="buttondiv">
-                        <button class="calc" onclick="velocidademedia()" type="button">Calcular</button>
+                        <button class="calc" onclick="velocidademedia(0)" type="button">Calcular</button>
                     </div>
                     <div id="outputdiv">
-                        <label for="outputvm">Tempo (ΔT)</label><br>
-                        <input type="text" disabled id="outputvm" class="output">
+                        <label for="outputtempo">Tempo (ΔT)</label><br>
+                        <input type="text" disabled id="outputtempo" class="output">
                     </div>
                 </div>
                 <div class="fisicadiv">
                     <div>
-                        <label for="distâcia">Distância (ΔS)</label><br>
-                        <input class="input" type="number" id="distancia">
+                        <label for="distâcia2">Distância (ΔS)</label><br>
+                        <input class="input" type="number" id="distancia2">
                     </div>
                     <div>
-                        <label for="tempo">Tempo (ΔT)</label><br>
-                        <input class="input" type="number" id="tempo">
+                        <label for="tempo2">Tempo (ΔT)</label><br>
+                        <input class="input" type="number" id="tempo2">
                     </div>
                     <div id="buttondiv">
-                        <button class="calc" onclick="velocidademedia()" type="button">Calcular</button>
+                        <button class="calc" onclick="velocidademedia(1)" type="button">Calcular</button>
                     </div>
                     <div id="outputdiv">
-                        <label for="outputvm">Velocidade Média (Vm)</label><br>
-                        <input type="text" disabled id="outputvm" class="output">
+                        <label for="outputvm2">Velocidade Média (Vm)</label><br>
+                        <input type="text" disabled id="outputvm2" class="output">
                     </div>
                 </div>
                 <div class="fisicadiv">
                     <div>
-                        <label for="distâcia">Velocidade Média (Vm)</label><br>
-                        <input class="input" type="number" id="distancia">
+                        <label for="Vm3">Velocidade Média (Vm)</label><br>
+                        <input class="input" type="number" id="Vm3">
                     </div>
                     <div>
-                        <label for="tempo">Tempo (ΔT)</label><br>
-                        <input class="input" type="number" id="tempo">
+                        <label for="tempo3">Tempo (ΔT)</label><br>
+                        <input class="input" type="number" id="tempo3">
                     </div>
                     <div id="buttondiv">
-                        <button class="calc" onclick="velocidademedia()" type="button">Calcular</button>
+                        <button class="calc" onclick="velocidademedia(2)" type="button">Calcular</button>
                     </div>
                     <div id="outputdiv">
-                        <label for="outputvm">Distância (ΔS)</label><br>
-                        <input type="text" disabled id="outputvm" class="output">
+                        <label for="outputdistancia3">Distância (ΔS)</label><br>
+                        <input type="text" disabled id="outputdistancia3" class="output">
                     </div>
                 </div>
             </div>

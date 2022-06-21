@@ -129,6 +129,7 @@ a:active, a:visited, a:enabled, a:link{
     width: 400px;
     background-color: aquamarine;
     padding: 30px;
+    border: solid black 2px;
 }
 
 .titulomatematica {
@@ -149,6 +150,7 @@ a:active, a:visited, a:enabled, a:link{
     width: 400px;
     background-color: aqua;
     padding: 30px;
+    border: solid black 2px;
 }
 
 .link-list {
@@ -196,6 +198,7 @@ a:active, a:visited, a:enabled, a:link{
     border: black solid 2px;
     color: black;
     border-radius: 10px;
+    margin-top: 10px;
 }
 
 .convert {
@@ -250,4 +253,9 @@ a:active, a:visited, a:enabled, a:link{
     float: right;
     margin-top: 85vh;
     margin-left: 10px;
+}
+.hr {
+    border: solid black 1px;
+    margin-top: 11px;
+    margin-bottom: 11px;
 }
