@@ -8,28 +8,33 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
-    <div class="lista">
+<body id="topo">
+    <div class="back-top-div">
+        <a href="#topo"><button class="back-top" id="backToTop"></button></a>
+    </div>
+    <div class="lista" id="lista">
         <div class="lista-mat">
             <h3 class="titulomatematica" align="center">Matemática</h3>
+            <hr class="hr-list">
             <ul class="link-list">
                 <li><a href="#pitagoras">Descobrir Hipotenusa</a></li>
             </ul>
         </div>
         <div class="lista-fis">
             <h3 class="titulomatematica" align="center">Física</h3>
+            <hr class="hr-list">
             <ul class="link-list">
-                
+                <li><a href="#velocidadeMedia">Encontrar Velocidade Média</a></li>
             </ul>
         </div>
     </div>
     <div class="container">
-        <form class="pitagoras" id="pitagoras">
+        <form class="matematica" id="pitagoras">
             <div class="titulodiv">
                 <h2 class="titulo">Teorema de Pitágoras</h2>
                 <p class="subtitulo">Essa calculadora utiliza o Teorema de Pitágoras para realizar o cálculo para descobrir a hipotenusa. Basta adicionar nos campos abaixo o primeiro e o segundo cateto (a e b) e o programa utilizará essas informações para descobrir o valor da Hipotenusa (c) utilizando a fórmula do Teorema (a² + b² = c²)</p>
             </div><br>
-            <div class="pitagorasdiv">
+            <div class="matematicadiv">
                 <div>
                     <label for="number1">Cateto 1</label><br>
                     <input class="input" type="number" id="number1">
@@ -42,8 +47,77 @@
                     <button type="button" class="calc" onclick="hipotenusa()">Calcular</button>
                 </div>
                 <div id="outputdiv">
-                    <label for="output">Resultado</label><br>
+                    <label for="output">Hipotenusa</label><br>
                     <input type="text" disabled id="output" class="output">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <form class="fisica" id="velocidadeMedia">
+            <div class="titulodiv">
+                <h2 class="titulo">Velocidade Média</h2>
+                <p class="subtitulo">Essa calculadora utiliza a fórmula <strong>ΔS/ΔT</strong> para calcular a velocide média. Ela também é capaz de adaptar a fórmula para encontrar também a distância percorrida pelo corpo ou o tempo que ele gastou para fazer isso. Os cálculos exigem que a distância esteja em metros por segundo (m/s) e o tempo em segundos (s)</p>
+            </div><br>
+            <div class="fisica-inputs">
+                <div class="conversor-div">
+                    <div>
+                        <label for="km/h-m/s">km/h -> m/s</label><br>
+                        <input id="km/h-m/s" type="number" class="input" autocomplete="none">
+                        <button type="button" class="convert" onclick="kmhToMs()">Converter</button><br>
+                        <input id="km/h-m/s-result" type="text" disabled class="output">
+                    </div>
+                </div>
+                <div class="fisicadiv">
+                    <div>
+                        <label for="distâcia">Distância (ΔS)</label><br>
+                        <input class="input" type="number" id="distancia">
+                    </div>
+                    <div>
+                        <label for="tempo">Velocidade Média (Vm)</label><br>
+                        <input class="input" type="number" id="tempo">
+                    </div>
+                    <div id="buttondiv">
+                        <button class="calc" onclick="velocidademedia()" type="button">Calcular</button>
+                    </div>
+                    <div id="outputdiv">
+                        <label for="outputvm">Tempo (ΔT)</label><br>
+                        <input type="text" disabled id="outputvm" class="output">
+                    </div>
+                </div>
+                <div class="fisicadiv">
+                    <div>
+                        <label for="distâcia">Distância (ΔS)</label><br>
+                        <input class="input" type="number" id="distancia">
+                    </div>
+                    <div>
+                        <label for="tempo">Tempo (ΔT)</label><br>
+                        <input class="input" type="number" id="tempo">
+                    </div>
+                    <div id="buttondiv">
+                        <button class="calc" onclick="velocidademedia()" type="button">Calcular</button>
+                    </div>
+                    <div id="outputdiv">
+                        <label for="outputvm">Velocidade Média (Vm)</label><br>
+                        <input type="text" disabled id="outputvm" class="output">
+                    </div>
+                </div>
+                <div class="fisicadiv">
+                    <div>
+                        <label for="distâcia">Velocidade Média (Vm)</label><br>
+                        <input class="input" type="number" id="distancia">
+                    </div>
+                    <div>
+                        <label for="tempo">Tempo (ΔT)</label><br>
+                        <input class="input" type="number" id="tempo">
+                    </div>
+                    <div id="buttondiv">
+                        <button class="calc" onclick="velocidademedia()" type="button">Calcular</button>
+                    </div>
+                    <div id="outputdiv">
+                        <label for="outputvm">Distância (ΔS)</label><br>
+                        <input type="text" disabled id="outputvm" class="output">
+                    </div>
                 </div>
             </div>
         </form>

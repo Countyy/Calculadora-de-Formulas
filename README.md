@@ -7,7 +7,7 @@
 <ul>
     <li>Projeto feito a partir de HTML, CSS e JavaScript</li>
     <li>Não é necessária uma conexão à internet para a realização dos cálculos</li>
-    <li>Até o momento, não temos um layout para celular. Recomendado utilizar em um computador</li>
+    <li>Até o momento, não temos um suporte dedicado ao celular. Pode ser que funcione, mas mesmo assim, recomendo a utilização em um computador</li>
 </ul>
 
 <hr>
