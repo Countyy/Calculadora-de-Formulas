@@ -12,4 +12,4 @@
 
 <hr>
 
-<h4>Esse projeto é desenvolvido por várias pessoas e será evoluido ao longo do tempo. Sou um programador iniciante e esse é um projeto que estou desenvolvendo para treinar. Qualquer dica que tiver ou problema que encontrar, me contate.</h4>
+<h4>Esse projeto terá novas funcionalidades e melhorias ao longo do tempo. Sou um programador iniciante e esse é um projeto que estou desenvolvendo para treinar. Qualquer dica que tiver ou problema que encontrar, me contate.</h4>
