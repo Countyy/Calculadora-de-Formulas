@@ -1,4 +1,4 @@
-# Calculadora-de-Formulas
+# Calculadora de Fórmulas
 
 <h2>Finalidade</h2>
 <p>Essa é uma calculadora com funções para calcular questões complexas de Matemática e Física. O código já contém as fórmulas necessárias para realizar os cálculos, você só precisa entregar os dados do enunciado.</p>
