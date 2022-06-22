@@ -12,20 +12,22 @@
     <div class="back-top-div">
         <a href="#topo"><button class="back-top" id="backToTop"></button></a>
     </div>
-    <div class="lista" id="lista">
-        <div class="lista-mat">
-            <h3 class="titulomatematica" align="center">Matemática</h3>
-            <hr class="hr-list">
-            <ul class="link-list">
-                <li><a href="#pitagoras">Descobrir Hipotenusa</a></li>
-            </ul>
-        </div>
-        <div class="lista-fis">
-            <h3 class="titulomatematica" align="center">Física</h3>
-            <hr class="hr-list">
-            <ul class="link-list">
-                <li><a href="#velocidadeMedia">Encontrar Velocidade Média</a></li>
-            </ul>
+        <div class="lista" id="lista">
+            <div class="lista-mat">
+                <h3 class="titulomatematica" align="center">Matemática</h3>
+                <hr class="hr-list">
+                <ul class="link-list">
+                    <li><a href="#pitagoras">Descobrir Hipotenusa</a></li>
+                    <li><a href="#bhaskara">Fórmula de Bháskara</a></li>
+                </ul>
+            </div>
+            <div class="lista-fis">
+                <h3 class="titulomatematica" align="center">Física</h3>
+                <hr class="hr-list">
+                <ul class="link-list">
+                    <li><a href="#velocidadeMedia">Encontrar Velocidade Média</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -123,6 +125,38 @@
                         <label for="outputdistancia3">Distância (ΔS)</label><br>
                         <input type="text" disabled id="outputdistancia3" class="output">
                     </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <form class="matematica" id="bhaskara">
+            <div class="titulodiv">
+                <h2 class="titulo">Fórmula de Bháskara</h2>
+                <p class="subtitulo">Essa calculadora usa as fórmulas <strong>b² - 4ac</strong> (para descobrir Delta), e a fórmula de bháskara para resolver equações do <strong>segundo grau completas</strong>.</p><br>
+                <p class="subtitulo">Para distribuir os dados, considere <i>a</i> igual ao número que fica do lado do x² (ax²), considere <i>b</i> o número que fica do lado do x (bx) e o <i>c</i> o número que não está do lado de nenhuma incógnita</p>
+            </div><br>
+            <div class="matematicadiv">
+                <div>
+                    <label for="a">a</label><br>
+                    <input class="input" type="number" id="a">
+                </div>
+                <div>
+                    <label for="b">b</label><br>
+                    <input class="input" type="number" id="b">
+                </div>
+                <div>
+                    <label for="c">c</label><br>
+                    <input class="input" type="number" id="c">
+                </div>
+                <div id="buttondiv">
+                    <button type="button" class="calc" onclick="bhaskara()">Calcular</button>
+                </div>
+                <div id="outputdiv" class="outputdiv">
+                    <label for="x1">X'</label><br>
+                    <input type="text" disabled id="x1" class="output">
+                    <label for="x2">X''</label>
+                    <input type="text" disabled id="x2" class="output">
                 </div>
             </div>
         </form>

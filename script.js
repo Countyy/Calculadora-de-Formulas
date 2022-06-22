@@ -47,3 +47,29 @@ function velocidademedia(a) {
         document.getElementById("outputdistancia3").setAttribute("value", result)
     }
 }
+
+function bhaskara() {
+    const a = document.getElementById("a").value
+    const b = document.getElementById("b").value
+    const c = document.getElementById("c").value
+
+    const delta = b * b - 4 * a * c
+    const rootDelta = Math.sqrt(delta)
+    if (delta < 0) {
+        document.getElementById("x1").setAttribute("value", "Não existe x nos números reais")
+        document.getElementById("x2").setAttribute("value", "Não existe x nos números reais")
+    }
+    else if (delta === 0) {
+        const bhaskara = (-b)/2 * a
+        document.getElementById("x1").setAttribute("value", bhaskara)
+        document.getElementById("x2").setAttribute("value", "A equação tem apenas uma raíz")
+    }
+    else if (delta > 0) {
+        const bhaskara1 = (-b + rootDelta)/2 * a
+        const bhaskara2 = (-b - rootDelta)/2 * a
+
+
+        document.getElementById("x1").setAttribute("value", Math.round(bhaskara1 * 100)/100)
+        document.getElementById("x2").setAttribute("value", Math.round(bhaskara2 * 100)/100)
+    }
+}
