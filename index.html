@@ -5,32 +5,440 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     scroll-behavior: smooth;
+    }
+
+    a:active, a:visited, a:enabled, a:link{
+        color: black;
+    }
+
+    .container {
+        height: fit-content;
+        display: flex;
+        margin-bottom: 50px;
+    }
+
+    .input {
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: solid 1px black;
+        outline: none;
+        background-color: lightgray;
+        text-indent: 7px;
+        height: 25px;
+        padding: 5px;
+    }
+
+    .output:disabled {
+        color: black;
+    }
+
+    .output {
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: solid 1px black;
+        outline: none;
+        background-color: lightgray;
+        text-indent: 7px;
+        height: 25px;
+        padding: 5px;
+
+    }
+
+    .matematica {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0vh;
+        background-color: aquamarine;
+        width: 80vw;
+        height: fit-content;
+        border-radius: 10px;
+        padding: 30px;
+        padding-bottom: 100px;
+        border: solid black 3px;
+    }
+
+    .matematicadiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 179px;
+        background-color: white;
+        padding: 20px;
+        border: black solid 2px;
+        color: black;
+        border-radius: 10px;
+    }
+
+    #outputdiv {
+        margin-top: 20px;
+    }
+
+    .outputdiv {
+        margin-left: 8px;
+    }
+
+    .calc {
+        position: relative;
+        margin: auto;
+        height: 40px;
+        width: 80px;
+        border-radius: 4px;
+        border: solid gray 2px;
+        transition: all .4s ease;
+    }
+
+    .calc:hover {
+        background-color: lightgray;
+        border-color: black;
+    }
+
+    .calc:active {
+        border: none;
+    }
+
+    #buttondiv {
+        height: 100%;
+        display: flex;
+    }
+
+    .titulo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .titulodiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin-bottom: 30px;
+    }
+
+    .subtitulo {
+        margin: auto;
+        max-width: 60vw;
+        margin-bottom: 10px;
+    }
+
+    .lista {
+        display: flex;
+        width: 80vw;
+        margin: auto;
+        min-width: 60px;
+        padding: 20px 40px 20px 40px;
+        justify-content: center;
+        gap: 3vw;
+        transition: all .5s ease;
+        z-index: 2;
+        border-radius: 0 0 70px 70px;
+        height: 72vh;
+        background-color: whitesmoke;
+        transform: translateY(-93%);
+        position: relative;
+        border: solid black 2px;
+    }
+
+    .gaveta-fixed {
+        position: fixed;
+        width: 100%;
+    }
+
+    .lista:hover  {
+        transform: translateY(-3%);
+        border-radius: 0 0 20px 20px;
+    }
+
+    .name-menu {
+        position: absolute;
+        margin-top: 71.3vh;
+    }
+
+    .lista-mat {
+        height: 59vh;
+        border-radius: 10px;
+        width: 15vw;
+        min-width: 100px;
+        background-color: aquamarine;
+        padding: 30px;
+        border: solid black 2px;
+    }
+
+    .titulomatematica {
+        margin-bottom: 5px;
+    }
+
+    .hr-list {
+        margin-bottom: 20px;
+        border: solid 1px black;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lista-fis {
+        height: 59vh;
+        border-radius: 10px;
+        width: 15vw;
+        min-width: 100px;
+        background-color: aqua;
+        padding: 30px;
+        border: solid black 2px;
+    }
+
+    .link-list {
+        margin-left: 1vw;
+    }
+
+    .link-list > li {
+        margin-bottom: 10px;
+    }
+
+    .fisica {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0vh;
+        background-color: aqua;
+        width: 80vw;
+        height: fit-content;
+        border-radius: 10px;
+        padding: 30px;
+        border: solid black 3px;
+    }
+
+    .fisicadiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 179px;
+        background-color: white;
+        padding: 20px;
+        border: black solid 2px;
+        color: black;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .fisica-inputs {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .conversor-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: fit-content;
+        background-color: white;
+        padding: 20px;
+        border: black solid 2px;
+        color: black;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .convert {
+        position: relative;
+        margin: auto;
+        height: 25px;
+        width: fit-content;
+        padding: 0px 5px 0px 5px;
+        border-radius: 4px;
+        border: solid gray 2px;
+        transition: all .4s ease;
+    }
+
+    .convert:hover {
+        background-color: lightgray;
+        border-color: black;
+    }
+
+    .convert:active {
+        border-color: lightgray;
+        transition: 0s;
+    }
+
+    .back-top {
+        position: absolute;
+        border-radius: 50%;
+        border: black 1px solid;
+        width: 50px;
+        height: 50px;
+        font-weight: 900;
+        transition: all .2s;
+        background-color: lightgray;
+        color: black;
+    }
+
+    .back-top::after {
+        content: "↑";
+    }
+
+    .back-top:hover {
+        width: 80px;
+        border-radius: 40px;
+        cursor: pointer;
+        border: solid black 3px;
+    }
+
+    .back-top:hover::after {
+        content: "Topo";
+    }
+
+    .back-top-div {
+        position: fixed;
+        float: right;
+        margin-top: 85vh;
+        margin-left: 10px;
+    }
+    .hr {
+        border: solid black 1px;
+        margin-top: 11px;
+        margin-bottom: 11px;
+    }
+
+    .gaveta {
+        position: absolute;
+        z-index: 2;
+    }
+    </style>
+    <script defer>
+        //  Código JavaScript das fómulas e cálculos
+        //  Aprecie com moderação
+
+        function hipotenusa() {
+            const cateto1 = document.getElementById("number1").value;           // Pega o valor do primeiro cateto
+            const cateto2 = document.getElementById("number2").value;           // Pega o valor do segundo cateto
+            const sqr = cateto1 * cateto1 + cateto2 * cateto2                   // Diz ao programa a fórmula que ele deve utilizar 
+            const result = Math.sqrt(sqr)                                       // Faz a raíz quadrada da fórmula
+            document.getElementById("output").setAttribute("value", result)     // Coloca o resultado no campo de "output" do aplicativo
+        }
+
+        function kmhToMs(a) {
+            if (a === 0) {
+                const kmH = document.getElementById("km/h-m/s").value;
+                const result = kmH / 3.6
+                const round = Math.round(result * 100) / 100
+                console.log(round)
+                document.getElementById("km/h-m/s-result").setAttribute("value", round)
+            }
+            if (a === 1) {
+                const kmH = document.getElementById("km/h-m/s1").value;
+                const result = kmH * 3.6
+                const round = Math.round(result * 100) / 100
+                console.log(round)
+                document.getElementById("m/s-km/h-result").setAttribute("value", round)
+            }
+        }
+
+        function velocidademedia(a) {
+            if (a === 0) {
+                const distancia = document.getElementById("distancia1").value
+                const Vm = document.getElementById("Vm1").value
+                const result = distancia / Vm
+                document.getElementById("outputtempo").setAttribute("value", result)
+            }
+            if (a === 1) {
+                const distancia = document.getElementById("distancia2").value
+                const tempo = document.getElementById("tempo2").value
+                const result = distancia / tempo
+                document.getElementById("outputvm2").setAttribute("value", result)
+            }
+
+            if (a === 2) {
+                const Vm = document.getElementById("Vm3").value
+                const tempo = document.getElementById("tempo3").value
+                const result = Vm * tempo
+                document.getElementById("outputdistancia3").setAttribute("value", result)
+            }
+        }
+
+        function bhaskara() {
+            const a = document.getElementById("a").value
+            const b = document.getElementById("b").value
+            const c = document.getElementById("c").value
+
+            const delta = b * b - 4 * a * c
+            const rootDelta = Math.sqrt(delta)
+            if (delta < 0) {
+                document.getElementById("x1").setAttribute("value", "Não existe x nos números reais")
+                document.getElementById("x2").setAttribute("value", "Não existe x nos números reais")
+            }
+            else if (delta === 0) {
+                const bhaskara = (-b)/2 * a
+                document.getElementById("x1").setAttribute("value", bhaskara)
+                document.getElementById("x2").setAttribute("value", "A equação tem apenas uma raíz")
+            }
+            else if (delta > 0) {
+                const bhaskara1 = (-b + rootDelta)/2 * a
+                const bhaskara2 = (-b - rootDelta)/2 * a
+                document.getElementById("x1").setAttribute("value", Math.round(bhaskara1 * 100)/100)
+                document.getElementById("x2").setAttribute("value", Math.round(bhaskara2 * 100)/100)
+            }
+        }
+
+        function torricelli() {
+            const Vo = document.getElementById("velocidade1MRUV").value
+            const ag = document.getElementById("aceleração1MRUV").value
+            const espaço = document.getElementById("espaço1MRUV").value
+
+            const Vosqr = Vo * Vo
+            const agEspaço = ag * 2 * espaço
+            const velocidadeSqr = Vosqr + agEspaço
+            const velocidade = Math.sqrt(velocidadeSqr)
+            document.getElementById("velocidadeTorricelli").setAttribute("value", Math.round(velocidade * 100)/100)
+        }
+
+        function MRUV() {
+            const Vo = document.getElementById("Vo2MRUV").value
+            const ag = document.getElementById("ace2MRUV").value
+            const tempo = document.getElementById("tempo2MRUV").value
+
+            const at = ag * tempo
+            const Voat = Vo + at
+
+            document.getElementById("outputMRUV").setAttribute("value", Voat)
+        }
+    </script>
 </head>
 <body id="topo">
     <div class="back-top-div">
         <a href="#topo"><button class="back-top" id="backToTop"></button></a>
     </div>
-        <div class="lista" id="lista">
-            <div class="lista-mat">
-                <h3 class="titulomatematica" align="center">Matemática</h3>
-                <hr class="hr-list">
-                <ul class="link-list">
-                    <li><a href="#pitagoras">Descobrir Hipotenusa</a></li>
-                    <li><a href="#bhaskara">Fórmula de Bháskara</a></li>
-                </ul>
-            </div>
-            <div class="lista-fis">
-                <h3 class="titulomatematica" align="center">Física</h3>
-                <hr class="hr-list">
-                <ul class="link-list">
-                    <li><a href="#velocidadeMedia">Encontrar Velocidade Média</a></li>
-                </ul>
+    <div class="gaveta">
+        <div class="gaveta-fixed">
+            <div class="lista" id="lista">
+                <div class="lista-mat">
+                    <h3 class="titulomatematica" align="center">Matemática</h3>
+                    <hr class="hr-list">
+                    <ul class="link-list">
+                        <li><a href="#pitagoras">Descobrir Hipotenusa</a></li>
+                        <li><a href="#bhaskara">Fórmula de Bháskara</a></li>
+                    </ul>
+                </div>
+                <div class="lista-fis">
+                    <h3 class="titulomatematica" align="center">Física</h3>
+                    <hr class="hr-list">
+                    <ul class="link-list">
+                        <li><a href="#velocidadeMedia">Encontrar Velocidade Média</a></li>
+                        <li><a href="#movRetilineoUni">Movimento Retilíneo Uniformamente Variado</a></li>
+                    </ul>
+                </div>
+                <div class="name-menu">
+                    <h3>Índice</h3>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container spacer">
         <form class="matematica" id="pitagoras">
             <div class="titulodiv">
                 <h2 class="titulo">Teorema de Pitágoras</h2>
@@ -157,6 +565,59 @@
                     <input type="text" disabled id="x1" class="output">
                     <label for="x2">X''</label>
                     <input type="text" disabled id="x2" class="output">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <form class="fisica" id="movRetilineoUni">
+            <div class="titulodiv">
+                <h2 class="titulo">Movimento Retilíneo Uniformemente Variado</h2>
+                <p class="subtitulo">Essa calculadora pode calcular questões sobre Movimento Retilíneo Uniforme e também sobre Queda Livre. Só é possível calcular questões que ignoram o atrito ou resistência do ar.</p>
+                <p class="subtitulo"><strong>Atenção</strong>: caso a questão diga os dados em metros por segundo (m/s), o resultado será também em metros por segundo. Caso a questão peça o resultado em quilômetros por hora (km/h), basta multiplicar o resultado da conta por 3,6 (ou utilizar o nosso conversor na parte de Velocidade Média). Assim como, caso a questão diga os dados em km/h, o resultado também será em km/h. Caso a questão peça a resposta em metros por segundo, basta dividir o resultado por 3,6 (ou utilizar o nosso conversor na ala de Velocidade Média).</p>
+            </div><br>
+            <div class="fisica-inputs">
+                <div class="fisicadiv">
+                    <div>
+                        <label>Velocidade Inicial</label>
+                        <input class="input" type="number" id="velocidade1MRUV">
+                    </div>
+                    <div>
+                        <label>Aceleração ou Gravidade</label>
+                        <input class="input" type="number" id="aceleração1MRUV">
+                    </div>
+                    <div>
+                        <label>ΔS (variação de espaço)</label>
+                        <input class="input" id="espaço1MRUV" type="number">
+                    </div>
+                    <div id="buttondiv">
+                        <button type="button" class="calc" onclick="torricelli()">Calcular</button>
+                    </div>
+                    <div id="outputdiv" class="">
+                        <label>Velocidade</label>
+                        <input disabled class="output" id="velocidadeTorricelli" type="tex">
+                    </div>
+                </div>
+                <div class="fisicadiv">
+                    <div>
+                        <label>Velocidade Inicial ( Vo )</label>
+                        <input type="number" id="Vo2MRUV" class="input">
+                    </div>
+                    <div>
+                        <label>Aceleração ou Gravidade</label>
+                        <input class="input" type="number" id="ace2MRUV">
+                    </div>
+                    <div>
+                        <label>Tempo ( t )</label>
+                        <input class="input" type="number" id="tempo2MRUV">
+                    </div>
+                    <div id="buttondiv">
+                        <button class="calc" type="button" onclick="MRUV()">Calcular</button>
+                    </div>
+                    <div class="outputdiv" id="outputdiv">
+                        <label>Velocidade</label>
+                        <input type="text" disabled class="output" id="outputMRUV">
+                    </div>
                 </div>
             </div>
         </form>
