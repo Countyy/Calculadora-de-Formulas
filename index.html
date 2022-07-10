@@ -59,7 +59,7 @@
         height: fit-content;
         border-radius: 10px;
         padding: 30px;
-        padding-bottom: 100px;
+        padding-top: 50px;
         border: solid black 3px;
     }
 
@@ -148,7 +148,7 @@
     .gaveta-fixed {
         position: fixed;
         width: 100%;
-	height: 0%;
+	    height: 0%;
     }
 
     .lista:hover  {
@@ -210,6 +210,7 @@
         height: fit-content;
         border-radius: 10px;
         padding: 30px;
+        padding-top: 50px;
         border: solid black 3px;
     }
 
@@ -316,11 +317,11 @@
         //  Aprecie com moderação
 
         function hipotenusa() {
-            const cateto1 = document.getElementById("number1").value;           // Pega o valor do primeiro cateto
-            const cateto2 = document.getElementById("number2").value;           // Pega o valor do segundo cateto
-            const sqr = cateto1 * cateto1 + cateto2 * cateto2                   // Diz ao programa a fórmula que ele deve utilizar 
-            const result = Math.sqrt(sqr)                                       // Faz a raíz quadrada da fórmula
-            document.getElementById("output").setAttribute("value", result)     // Coloca o resultado no campo de "output" do aplicativo
+            const cateto1 = document.getElementById("number1").value;                                   // Pega o valor do primeiro cateto
+            const cateto2 = document.getElementById("number2").value;                                   // Pega o valor do segundo cateto
+            const sqr = cateto1 * cateto1 + cateto2 * cateto2                                           // Diz ao programa a fórmula que ele deve utilizar 
+            const result = Math.sqrt(sqr)                                                               // Faz a raíz quadrada da fórmula
+            document.getElementById("output").setAttribute("value", Math.round(result * 100) / 100)     // Coloca o resultado no campo de "output" do aplicativo
         }
 
         function kmhToMs(a) {
@@ -337,6 +338,7 @@
                 const round = Math.round(result * 100) / 100
                 console.log(round)
                 document.getElementById("m/s-km/h-result").setAttribute("value", round)
+                
             }
         }
 
@@ -390,7 +392,6 @@
             const Vo = document.getElementById("velocidade1MRUV").value
             const ag = document.getElementById("aceleração1MRUV").value
             const espaço = document.getElementById("espaço1MRUV").value
-
             const Vosqr = Vo * Vo
             const agEspaço = ag * 2 * espaço
             const velocidadeSqr = Vosqr + agEspaço
@@ -596,7 +597,28 @@
                     </div>
                     <div id="outputdiv" class="">
                         <label>Velocidade</label>
-                        <input disabled class="output" id="velocidadeTorricelli" type="tex">
+                        <input disabled class="output" id="velocidadeTorricelli" type="text">
+                    </div>
+                </div>
+                <div class="fisicadiv">
+                    <div>
+                        <label>Velocidade Inicial</label>
+                        <input type="number" class="input" id="Vo1MRUV">
+                    </div>
+                    <div>
+                        <label>Aceleração ou Gravidade</label>
+                        <input class="input" id="aceleração2MRUV" type="number">
+                    </div>
+                    <div>
+                        <Label>Velocidade</Label>
+                        <input class="input" id="velocidade2MRUV" type="number">
+                    </div>
+                    <div class="buttondiv">
+                        <button type="button" class="calc" onclick="torricelli(2)">Calcular</button>
+                    </div>
+                    <div id="outputdiv">
+                        <label>ΔS (variação de espaço)</label>
+                        <input class="output" id="deltaS2" type="text" disabled>
                     </div>
                 </div>
                 <div class="fisicadiv">
@@ -615,7 +637,7 @@
                     <div id="buttondiv">
                         <button class="calc" type="button" onclick="MRUV()">Calcular</button>
                     </div>
-                    <div class="outputdiv" id="outputdiv">
+                    <div class="" id="outputdiv">
                         <label>Velocidade</label>
                         <input type="text" disabled class="output" id="outputMRUV">
                     </div>
