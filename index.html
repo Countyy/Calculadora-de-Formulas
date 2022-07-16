@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-    padding: 0;
-    margin: 0;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-     scroll-behavior: smooth;
+    * {
+        padding: 0;
+        margin: 0;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        scroll-behavior: smooth;
     }
 
     a:active, a:visited, a:enabled, a:link{
@@ -388,15 +388,17 @@
             }
         }
 
-        function torricelli() {
-            const Vo = document.getElementById("velocidade1MRUV").value
-            const ag = document.getElementById("aceleração1MRUV").value
-            const espaço = document.getElementById("espaço1MRUV").value
-            const Vosqr = Vo * Vo
-            const agEspaço = ag * 2 * espaço
-            const velocidadeSqr = Vosqr + agEspaço
-            const velocidade = Math.sqrt(velocidadeSqr)
-            document.getElementById("velocidadeTorricelli").setAttribute("value", Math.round(velocidade * 100)/100)
+        function torricelli(a) {
+            if (a === 1) {
+                const Vo = document.getElementById("vo1Torricelli").value
+                const ag = document.getElementById("aceleração1Torricelli").value
+                const espaço = document.getElementById("espaço1Torricelli").value
+                const Vosqr = Vo * Vo
+                const agEspaço = ag * 2 * espaço
+                const velocidadeSqr = Vosqr + agEspaço
+                const velocidade = Math.sqrt(velocidadeSqr)
+                document.getElementById("velocidade1Torricelli").setAttribute("value", Math.round(velocidade * 100)/100)
+            }
         }
 
         function MRUV() {
@@ -431,7 +433,7 @@
                     <hr class="hr-list">
                     <ul class="link-list">
                         <li><a href="#velocidadeMedia">Encontrar Velocidade Média</a></li>
-                        <li><a href="#movRetilineoUni">Movimento Retilíneo Uniformamente Variado</a></li>
+                        <li><a href="#torricelliEquation">Equação de Torricelli</a></li>
                     </ul>
                 </div>
                 <div class="name-menu">
@@ -572,46 +574,46 @@
         </form>
     </div>
     <div class="container">
-        <form class="fisica" id="movRetilineoUni">
+        <form class="fisica" id="torricelliEquation">
             <div class="titulodiv">
-                <h2 class="titulo">Movimento Retilíneo Uniformemente Variado</h2>
-                <p class="subtitulo">Essa calculadora pode calcular questões sobre Movimento Retilíneo Uniforme e também sobre Queda Livre. Só é possível calcular questões que ignoram o atrito ou resistência do ar.</p>
+                <h2 class="titulo">Equação de Torricelli</h2>
+                <p class="subtitulo">Essa calculadora pode calcular questões sobre Movimento Retilíneo Uniforme e também sobre Queda Livre utilizando a equação de Torricelli. Só é possível calcular questões que ignoram o atrito ou resistência do ar.</p>
                 <p class="subtitulo"><strong>Atenção</strong>: caso a questão diga os dados em metros por segundo (m/s), o resultado será também em metros por segundo. Caso a questão peça o resultado em quilômetros por hora (km/h), basta multiplicar o resultado da conta por 3,6 (ou utilizar o nosso conversor na parte de Velocidade Média). Assim como, caso a questão diga os dados em km/h, o resultado também será em km/h. Caso a questão peça a resposta em metros por segundo, basta dividir o resultado por 3,6 (ou utilizar o nosso conversor na ala de Velocidade Média).</p>
             </div><br>
             <div class="fisica-inputs">
                 <div class="fisicadiv">
                     <div>
                         <label>Velocidade Inicial</label>
-                        <input class="input" type="number" id="velocidade1MRUV">
+                        <input class="input" type="number" id="vo1Torricelli">
                     </div>
                     <div>
                         <label>Aceleração ou Gravidade</label>
-                        <input class="input" type="number" id="aceleração1MRUV">
+                        <input class="input" type="number" id="aceleração1Torricelli">
                     </div>
                     <div>
                         <label>ΔS (variação de espaço)</label>
-                        <input class="input" id="espaço1MRUV" type="number">
+                        <input class="input" id="espaço1Torricelli" type="number">
                     </div>
                     <div id="buttondiv">
-                        <button type="button" class="calc" onclick="torricelli()">Calcular</button>
+                        <button type="button" class="calc" onclick="torricelli(1)">Calcular</button>
                     </div>
                     <div id="outputdiv" class="">
                         <label>Velocidade</label>
-                        <input disabled class="output" id="velocidadeTorricelli" type="text">
+                        <input disabled class="output" id="velocidade1Torricelli" type="text">
                     </div>
                 </div>
                 <div class="fisicadiv">
                     <div>
                         <label>Velocidade Inicial</label>
-                        <input type="number" class="input" id="Vo1MRUV">
+                        <input type="number" class="input" id="Vo2Torricelli">
                     </div>
                     <div>
                         <label>Aceleração ou Gravidade</label>
-                        <input class="input" id="aceleração2MRUV" type="number">
+                        <input class="input" id="aceleração2Torricelli" type="number">
                     </div>
                     <div>
                         <Label>Velocidade</Label>
-                        <input class="input" id="velocidade2MRUV" type="number">
+                        <input class="input" id="velocidade2Torricelli" type="number">
                     </div>
                     <div class="buttondiv">
                         <button type="button" class="calc" onclick="torricelli(2)">Calcular</button>
@@ -623,23 +625,44 @@
                 </div>
                 <div class="fisicadiv">
                     <div>
-                        <label>Velocidade Inicial ( Vo )</label>
-                        <input type="number" id="Vo2MRUV" class="input">
+                        <label>Velocidade Inicial</label>
+                        <input type="number" class="input" id="Vo3Torricelli">
                     </div>
+                    <div>
+                        <label>ΔS (variação de espaço)</label>
+                        <input class="input" id="deltaS3" type="number">
+                    </div>
+                    <div>
+                        <Label>Velocidade</Label>
+                        <input class="input" id="velocidade3Torricelli" type="number">
+                    </div>
+                    <div class="buttondiv">
+                        <button type="button" class="calc" onclick="torricelli(3)">Calcular</button>
+                    </div>
+                    <div id="outputdiv">
+                        <label>Aceleração ou Gravidade</label>
+                        <input class="output" id="aceleração3Torricelli" type="text" disabled>
+                    </div>
+                </div>
+                <div class="fisicadiv">
                     <div>
                         <label>Aceleração ou Gravidade</label>
-                        <input class="input" type="number" id="ace2MRUV">
+                        <input type="number" class="input" id="gravidade4Torricelli">
                     </div>
                     <div>
-                        <label>Tempo ( t )</label>
-                        <input class="input" type="number" id="tempo2MRUV">
+                        <label>ΔS (variação de espaço)</label>
+                        <input class="input" id="deltaS4" type="number">
                     </div>
-                    <div id="buttondiv">
-                        <button class="calc" type="button" onclick="MRUV()">Calcular</button>
+                    <div>
+                        <Label>Velocidade</Label>
+                        <input class="input" id="velocidade4Torricelli" type="number">
                     </div>
-                    <div class="" id="outputdiv">
-                        <label>Velocidade</label>
-                        <input type="text" disabled class="output" id="outputMRUV">
+                    <div class="buttondiv">
+                        <button type="button" class="calc" onclick="torricelli(3)">Calcular</button>
+                    </div>
+                    <div id="outputdiv">
+                        <label>Velocidade Inicial</label>
+                        <input class="output" id="Vo4Torricelli" type="text" disabled>
                     </div>
                 </div>
             </div>
