@@ -111,8 +111,8 @@
     }
 
     .calc:hover {
+        border: black solid 2px;
         background-color: lightgray;
-        border-color: black;
     }
 
     .calc:active {
@@ -204,7 +204,7 @@
         border-radius: 10px;
         width: 15vw;
         min-width: 100px;
-        background-color: aqua;
+        background-color: #48b4f2;
         padding: 30px;
         border: solid black 2px;
     }
@@ -221,7 +221,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0vh;
-        background-color: aqua;
+        background-color: #48b4f2;
         width: 80vw;
         height: fit-content;
         border-radius: 10px;
@@ -427,9 +427,12 @@
             }
 
             if (a === 3) {
-                const vo = document.getElementById("Vo3Torricelli").value
-                const deltaS = document.getElementById("deltaS3").value
-                const vel = document.getElementById("velocidade3Torricelli").value
+                v = document.getElementById("velocidade3Torricelli").value
+                vSquare = v * v
+                vo = document.getElementById("Vo3Torricelli").value
+                voSquare = vo * vo
+                deltaS = document.getElementById("deltaS3").value
+                
             }
 
             if (a === 4) {
