@@ -1,13 +1,13 @@
 # Calculadora de Fórmulas
 
 <h2>Finalidade</h2>
-<p>Essa é uma calculadora com funções para calcular questões complexas de Matemática e Física. O código já contém as fórmulas necessárias para realizar os cálculos, você só precisa entregar os dados do enunciado.</p>
+<p>Essa é uma calculadora com funções para calcular questões complexas de matemática e física. O código já contém as fórmulas necessárias para realizar os cálculos, você só precisa entregar os dados do enunciado.</p>
 
 <h2>Informações</h2>
 <ul>
     <li>Projeto feito a partir de HTML, CSS e JavaScript</li>
     <li>Não é necessária uma conexão à internet para a realização dos cálculos</li>
-    <li>Até o momento, não temos um suporte dedicado ao celular. Pode ser que funcione, mas mesmo assim, recomendo a utilização em um computador</li>
+    <li>Funciona tanto no computador como no celular, porém o aplicativo é bem mais otimizado em computadores.</li>
 </ul>
 
 <hr>
